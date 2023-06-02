@@ -75,6 +75,7 @@ public class ToileController implements Initializable {
            comp5.getText().isEmpty() ||
            comp6.getText().isEmpty() ){
                 log.setText("Erreur de saisie :\nsaisissez toute les notes");
+                vider();
         }
         else if (Integer.parseInt(comp1.getText()) > 20 ||
                 Integer.parseInt(comp2.getText()) > 20 ||
