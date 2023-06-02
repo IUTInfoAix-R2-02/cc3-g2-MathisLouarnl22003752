@@ -1,27 +1,13 @@
 package fr.amu.iut.cc3;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.Line;
+import javafx.scene.shape.Circle;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ToileController implements Initializable {
@@ -47,12 +33,14 @@ public class ToileController implements Initializable {
     Button boutonTracer;
     @FXML
     Button boutonVider;
+    @FXML
+    Pane graph;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-    int getXRadarChart(double value, int axe ){
+    int getXRadarChart(double value, int axe){
         return (int) (rayonCercleExterieur + Math.cos(Math.toRadians(angleDepart - (axe-1)  * angleEnDegre)) * rayonCercleExterieur
                 *  (value / noteMaximale));
     }
@@ -63,7 +51,13 @@ public class ToileController implements Initializable {
     }
     @FXML
     public void tracer(){
-
+        Circle c1 = new Circle(getXRadarChart(Integer.parseInt(comp1.getText()),1),getYRadarChart(Integer.parseInt(comp1.getText()),1), 5);
+        Circle c2 = new Circle(getXRadarChart(Integer.parseInt(comp2.getText()),2),getYRadarChart(Integer.parseInt(comp2.getText()),2), 5);
+        Circle c3 = new Circle(getXRadarChart(Integer.parseInt(comp3.getText()),3),getYRadarChart(Integer.parseInt(comp3.getText()),3), 5);
+        Circle c4 = new Circle(getXRadarChart(Integer.parseInt(comp4.getText()),4),getYRadarChart(Integer.parseInt(comp4.getText()),4), 5);
+        Circle c5 = new Circle(getXRadarChart(Integer.parseInt(comp5.getText()),5),getYRadarChart(Integer.parseInt(comp5.getText()),5), 5);
+        Circle c6 = new Circle(getXRadarChart(Integer.parseInt(comp6.getText()),5),getYRadarChart(Integer.parseInt(comp6.getText()),6), 5);
+        graph.getChildren().addAll(c1,c2,c3,c4,c5,c6);
     }
 
     @FXML
