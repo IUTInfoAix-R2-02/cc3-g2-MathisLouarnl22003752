@@ -59,27 +59,37 @@ public class ToileController implements Initializable {
     }
     @FXML
     public void tracer(){
-        vider();
-        c1.setCenterX(getXRadarChart(Integer.parseInt(comp2.getText()),1));
-        c1.setCenterY(getYRadarChart(Integer.parseInt(comp2.getText()),1));
-        c1.setRadius(5);
-        c2.setCenterX(getXRadarChart(Integer.parseInt(comp2.getText()),2));
-        c2.setCenterY(getYRadarChart(Integer.parseInt(comp2.getText()),2));
-        c2.setRadius(5);
-        c3.setCenterX(getXRadarChart(Integer.parseInt(comp3.getText()),3));
-        c3.setCenterY(getYRadarChart(Integer.parseInt(comp3.getText()),3));
-        c3.setRadius(5);
-        c4.setCenterX(getXRadarChart(Integer.parseInt(comp4.getText()),4));
-        c4.setCenterY(getYRadarChart(Integer.parseInt(comp4.getText()),4));
-        c4.setRadius(5);
-        c5.setCenterX(getXRadarChart(Integer.parseInt(comp5.getText()),5));
-        c5.setCenterY(getYRadarChart(Integer.parseInt(comp5.getText()),5));
-        c5.setRadius(5);
-        c6.setCenterX(getXRadarChart(Integer.parseInt(comp6.getText()),6));
-        c6.setCenterY(getYRadarChart(Integer.parseInt(comp6.getText()),6));
-        c6.setRadius(5);
+        if(Integer.parseInt(comp1.getText()) > 20 ||
+                Integer.parseInt(comp2.getText()) > 20 ||
+                Integer.parseInt(comp3.getText()) > 20 ||
+                Integer.parseInt(comp4.getText()) > 20 ||
+                Integer.parseInt(comp5.getText()) > 20 ||
+                Integer.parseInt(comp6.getText()) > 20) {
+            System.out.println("Erreur dans la saisie des valeurs");
+        }
+        else {
+            vider();
+            c1.setCenterX(getXRadarChart(Integer.parseInt(comp1.getText()), 1));
+            c1.setCenterY(getYRadarChart(Integer.parseInt(comp1.getText()), 1));
+            c1.setRadius(5);
+            c2.setCenterX(getXRadarChart(Integer.parseInt(comp2.getText()), 2));
+            c2.setCenterY(getYRadarChart(Integer.parseInt(comp2.getText()), 2));
+            c2.setRadius(5);
+            c3.setCenterX(getXRadarChart(Integer.parseInt(comp3.getText()), 3));
+            c3.setCenterY(getYRadarChart(Integer.parseInt(comp3.getText()), 3));
+            c3.setRadius(5);
+            c4.setCenterX(getXRadarChart(Integer.parseInt(comp4.getText()), 4));
+            c4.setCenterY(getYRadarChart(Integer.parseInt(comp4.getText()), 4));
+            c4.setRadius(5);
+            c5.setCenterX(getXRadarChart(Integer.parseInt(comp5.getText()), 5));
+            c5.setCenterY(getYRadarChart(Integer.parseInt(comp5.getText()), 5));
+            c5.setRadius(5);
+            c6.setCenterX(getXRadarChart(Integer.parseInt(comp6.getText()), 6));
+            c6.setCenterY(getYRadarChart(Integer.parseInt(comp6.getText()), 6));
+            c6.setRadius(5);
 
-        toile.getChildren().addAll(c1,c2,c3,c4,c5,c6);
+            toile.getChildren().addAll(c1, c2, c3, c4, c5, c6);
+        }
     }
 
     @FXML
