@@ -62,7 +62,7 @@ public class ToileController implements Initializable {
 
     @FXML
     public void vider(){
-
+        graph.getChildren().clear();
     }
 
 }
