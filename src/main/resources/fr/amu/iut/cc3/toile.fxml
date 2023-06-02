@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 
 <HBox id="scene" prefHeight="420.0" prefWidth="650.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
-    <Pane fx:id="graph" prefHeight="400.0" prefWidth="400.0">
+    <Pane prefHeight="400.0" prefWidth="400.0">
         <Circle centerX="200.0" centerY="200.0" layoutY="19.0" radius="200.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile" />
@@ -59,8 +59,8 @@
          </GridPane>
          <HBox alignment="CENTER" prefHeight="127.0" prefWidth="224.0" spacing="30.0" VBox.vgrow="ALWAYS">
             <children>
-               <Button fx:id="boutonTracer" mnemonicParsing="false" text="Tracer" onAction="#tracer"/>
-               <Button fx:id="boutonVider" mnemonicParsing="false" text="Vider" onAction="#vider"/>
+               <Button fx:id="boutonTracer" mnemonicParsing="false" onAction="#tracer" text="Tracer" />
+               <Button fx:id="boutonVider" mnemonicParsing="false" onAction="#vider" text="Vider" />
             </children>
          </HBox>
       </children>
